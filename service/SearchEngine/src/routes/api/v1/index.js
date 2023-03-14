@@ -1,5 +1,5 @@
-//// index.js
-const v1Route = require("express").Router();
+import { Router } from "express";
+const v1Route = Router();
 
 v1Route.get("/books", (req, res) => {
   res.json({});
@@ -8,4 +8,4 @@ v1Route.use("*", (req, res) => {
   res.status(404).json({ body: "invalid route" })
 });
 
-module.exports = v1Route;
+export default v1Route;

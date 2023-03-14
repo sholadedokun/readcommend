@@ -1,10 +1,11 @@
-//// index.js
-const apiRoute = require("express").Router()
-const v1 = require("./v1");
+import { Router } from "express";
+import v1Route from "./v1/index.js";
 
-apiRoute.use("/v1", v1)
+const apiRoute = Router()
+
+apiRoute.use("/v1", v1Route)
 apiRoute.use("*", (req, res) => {
   res.status(404).json({ body: "invalid route" });
 });
 
-module.exports = apiRoute
+export default apiRoute
