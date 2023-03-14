@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "jest",
+    "test:watch": "jest --watch --maxWorkers=25%"
   },
   "keywords": [],
   "author": "",
