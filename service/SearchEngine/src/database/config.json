@@ -1,0 +1,34 @@
+{
+  "development" : {
+    "database": "readcommend",
+    "username": "postgres",
+    "password": "password123",
+    "host": "0.0.0.0",
+    "port": "5432",
+    "dialect": "postgres",
+    "dialectOptions": { 
+      "decimalNumbers": true 
+    }
+  },
+  "test": {
+    "database": "readcommend_test",
+    "username": "postgres",
+    "password": "password123",
+    "host": "0.0.0.0",
+    "port": "5432",
+    "dialect": "postgres",
+    "dialectOptions": { 
+      "decimalNumbers": true 
+    }
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "decimalNumbers": true,
+      "ssl": {
+        "rejectUnauthorized": true
+      }
+    }
+  }
+}
