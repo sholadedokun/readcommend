@@ -8,7 +8,8 @@
     "dialect": "postgres",
     "dialectOptions": { 
       "decimalNumbers": true 
-    }
+    },
+    "logging": true
   },
   "test": {
     "database": "readcommend_test",
@@ -17,9 +18,10 @@
     "host": "0.0.0.0",
     "port": "5432",
     "dialect": "postgres",
-    "dialectOptions": { 
+    "dialectOptions": {
       "decimalNumbers": true 
-    }
+    },
+    "logging": false
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
@@ -29,6 +31,7 @@
       "ssl": {
         "rejectUnauthorized": true
       }
-    }
+    },
+    "logging": true
   }
 }
