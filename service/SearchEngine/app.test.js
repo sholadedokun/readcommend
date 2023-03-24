@@ -28,7 +28,7 @@ describe("/api", ()=> {
   })
 })
 
-describe("Invalid app routes", ()=>{
+describe("Invalid app routes", ()=> {
   test("should respond with a 404 status code", async()=> {
     const response = await request(app).get("/route/v1/books")
     expect(response.statusCode).toBe(404)
