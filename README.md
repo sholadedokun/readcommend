@@ -101,4 +101,27 @@ You should see the front-end app appear, with all components displaying error me
 
 # Deploying and running back-end microservice
 
-WRITE YOUR DOCUMENTATION HERE
+This use the same docker compose file for the Dabase and Frontend deploy, so no additional command is required.
+- ### In production mode
+  ```bash
+  $ docker-compose up --build
+  ```
+  
+- ### In developement mode
+Make sure the production enviroment is not running then, navigate to the `./service/SearchEngine` directory in the repo and run this command:
+  ```bash
+    $ npm run dev 
+  ```
+  and in another terminal
+  ```bash
+  $ docker-compose up --build
+  ```
+  wait for a few mins for all the containers to be started
+
+  This mode adds a breakpoint when "debugger" is encounter during execution. Follow the instructions given [here](https://nodejs.org/en/docs/guides/debugging-getting-started#inspector-clients) to continue the debbuger in an headless chrome.
+  ##### Running Test
+  - Normal mode: `npm run test`
+  - Debbuger mode: `npm run test:watch`
+  - Coverage mode : `npm run test:coverage`
+    
+  The Debbuger modes adds a breakpoint in test when "debugger" is encoutered during test.
