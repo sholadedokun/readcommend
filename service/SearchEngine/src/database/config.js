@@ -1,4 +1,4 @@
-{
+export default {
   "development" : {
     "database": "readcommend",
     "username": "postgres",
@@ -24,13 +24,14 @@
     "logging": false
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "database": process.env.POSTGRES_DB,
+    "username": process.env.POSTGRES_USER,
+    "password": process.env.POSTGRES_PASSWORD,
+    "host": process.env.PSQL_HOST,
+    "port": process.env.POSTGRES_PORT,
     "dialect": "postgres",
     "dialectOptions": {
       "decimalNumbers": true,
-      "ssl": {
-        "rejectUnauthorized": true
-      }
     },
     "logging": true
   }

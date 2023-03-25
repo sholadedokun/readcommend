@@ -1,11 +1,12 @@
-FROM node:10.18.1
+FROM node:16
 
 WORKDIR /SearchEngine
 COPY package.json .
 RUN npm install
-
+RUN npm ci --only=production
 # Build node app
 COPY . .
-RUN npm start
+
+EXPOSE 5001
 
 CMD ["npm", "start"]

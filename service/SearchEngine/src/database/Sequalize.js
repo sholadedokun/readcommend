@@ -1,8 +1,5 @@
 import { Sequelize } from "sequelize"
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-const config = require ("./config.json")
+import config from "./config.js"
 
 // by default sequelize parses Decimal number as JS 
 Sequelize.DataTypes.postgres.DECIMAL.parse = parseFloat;

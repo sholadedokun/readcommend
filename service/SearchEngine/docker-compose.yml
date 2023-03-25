@@ -2,13 +2,14 @@
 version: "3"
 services:
   app:
-    build: app
+    build:
+      context: ../../app
     ports:
       - "8080:8080"
 
   postgresql:
     build:
-      context: ./db-migrations
+      context: ../../db-migrations
       dockerfile: Dockerfile
     ports:
       - "5432:5432"
@@ -17,14 +18,3 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
-  backend:
-    build: service/SearchEngine
-    ports:
-      - "5001:5001"
-    environment:
-      NODE_ENV: ${NODE_ENV:-production}
-      PSQL_HOST: ${PSQL_HOST:-postgresql}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password123}
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_DB: ${POSTGRES_DB:-readcommend}
-      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
