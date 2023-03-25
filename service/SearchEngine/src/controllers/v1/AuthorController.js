@@ -6,7 +6,7 @@ class AuthorController extends BaseController {
   static getAllAuthors = async(req, res) => {
     const { query } = req
     try {
-      const allRawBooks = await this.queryService(query)
+      const allRawBooks = await this.queryService(this.sanitiseInput(query))
       const serializedBooks = this.serializer(allRawBooks)
       res.status(200).send(serializedBooks)
     }
