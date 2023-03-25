@@ -101,27 +101,26 @@ You should see the front-end app appear, with all components displaying error me
 
 # Deploying and running back-end microservice
 
-This use the same docker compose file for the Dabase and Frontend deploy, so no additional command is required.
+
 - ### In production mode
-  ```bash
-  $ docker-compose up --build
-  ```
+This uses the same docker compose file as the database and frontend deploy, so run the same  `$ docker-compose up --build` command  in the repo's root direcoty and wait for the containers to be started. Navigate to http://localhost:8080 and the App should be fully functional according to the requirements.
+  
   
 - ### In developement mode
-Make sure the production enviroment is not running then, navigate to the `./service/SearchEngine` directory in the repo and run this command:
+Make sure the production containers are not running (use `ctrl + c` to kill the docker containers) then, navigate to the `./service/SearchEngine` directory in the repo and run this command:
   ```bash
     $ npm run dev 
   ```
-  and in another terminal
+   to start the backend service in a dev mode.
+
+  Start a new terminal and run
   ```bash
   $ docker-compose up --build
   ```
-  wait for a few mins for all the containers to be started
+  to start only the frontend app and database, wait for a few mins for all the containers to be started. 
 
-  This mode adds a breakpoint when "debugger" is encounter during execution. Follow the instructions given [here](https://nodejs.org/en/docs/guides/debugging-getting-started#inspector-clients) to continue the debbuger in an headless chrome.
+  This mode adds a breakpoint when the apps first load or when "debugger" is encounter during execution. Follow the instructions given [here](https://nodejs.org/en/docs/guides/debugging-getting-started#inspector-clients) to continue the debbuger in an headless chrome. The app should now be fully functional in http://localhost:8080.
   ##### Running Test
   - Normal mode: `npm run test`
   - Debbuger mode: `npm run test:watch`
   - Coverage mode : `npm run test:coverage`
-    
-  The Debbuger modes adds a breakpoint in test when "debugger" is encoutered during test.
