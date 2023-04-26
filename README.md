@@ -1,40 +1,4 @@
 # Readcommend
-
-Readcommend is a book recommendation web app for the true book aficionados and disavowed human-size bookworms. It allows to search for book recommendations with best ratings, based on different search criteria.
-
-# Instructions
-
-The front-end single-page app has already been developed using Node/TypeScript/React (see `/app`) and a PostgreSQL database with sample data is also provided (see `/migrate.*`). Your mission - if you accept it - is to implement a back-end microservice that will fetch the data from the database and serve it to the front-end app.
-
-- In the `service` directory, write a back-end microservice, using the language of your choice, that listens on `http://localhost:5001`. **NOTE: You will be evaluated on the mastery of your chosen language, you should opt to use the language you are most proficient with**.
-- Write multiple REST endpoints, all under the `/api/v1` route, as specified in the `/open-api.yaml` swagger file.
-- The most important endpoint, `/books`, must return book search results in order of descending ratings (from 5.0 to 1.0 stars) and filtered according to zero, one or multiple user selected criteria: author(s), genre(s), min/max pages, start/end publication date (the "era"). A maximum number of results can also be specified.
-- It's OK to use libraries for http handling/routing and SQL (ie: query builders), but try to refrain from relying heavily on end-to-end frameworks (ie: Django) and ORMs that handle everything and leave little room to showcase your coding skills! ;)
-- Write some documentation (ie: at the end of this file) to explain how to deploy and run your service. *Please assume that the reviewer should be able to run your solution without needing to install extra dependencies on his machine.*
-- Keep your code simple, clean and well-organized.
-- During development commit and push regularly to the CodeSubmit git repository and, when you are done, submit your assignment in CodeSubmit.
-- Don't hesitate to come back to us with any questions along the way. We prefer that you ask questions, rather than assuming and misinterpreting requirements.
-- You have no time limit to complete this exercise, but the more time you take, the higher our expectations in terms of quality and completeness.
-- You will be evaluated mainly based on how well you respect the above instructions. Please refer to the **Expectations** section below for more details on how you will be evaluated.
-
-# Expectations
-
-nesto recruits for all proficiency levels. Depending on your experience and the position you are applying for, what we expect to see in the test will differ. We do, however, understand that you may have a life (some people do). If you don't have the time to respect all the instructions, simply do your best and focus on what you deem most important.
-
-**Junior Submission**
-
-- Provides a solution that is bug free, fast and meets all the requirements listed above.
-- Code provided shows a good proficiency in the chosen language.
-- Shows good reflexes with regards to 3rd party dependencies. You should add dependencies that add value to your solution without solving everything for you.
-- Basic testing of the core functionalities.
-
-**Senior Submission**
-
-We expect everything from a *Junior Submission* and that you treat this as production ready code without necessarily providing full test coverage
-- Solution is architectured properly to allow for adequate test coverage and future extensions.
-- Each layer of the provided solution must be protected against typical attack vectors. You should **NOT** rely on your API contract to protect you from malicious inputs.
-- Showcases the type of tests needed to validate your architectural choices and to provide confidence that your solution satisfies the 'business' and performance requirements.
-
 # Development environment
 
 ## Docker Desktop
